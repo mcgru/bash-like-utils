@@ -1,4 +1,6 @@
-//////pub mod bash_like_utils;
+//! Library bash_like_utils;
+//!
+//! Contains struct PathString with some functions that behave like bash utilities
 
 use std::path::{Path, PathBuf};
 use std::ffi::OsStr;
@@ -18,6 +20,7 @@ impl PathString {
     /// assert_ne!(q,"./qweqwe");
     /// ```
     pub fn readlink(path: &str) -> String {
+///////! inner doc string of `readlink`
         let path = Path::new(path).canonicalize().unwrap_or(PathBuf::new());
         path.to_str().unwrap_or("").to_string()
     }
