@@ -110,6 +110,8 @@ impl PathString {
         match bn.len() {   0 => String::new(), 1 => { bn[0].to_string() },  _ => { bn.pop(); bn.last().unwrap().to_string() } }
     }
     /// no alias in bash: returns basename without extension (calls basenoext)
+    ///
+    /// Alias to `basenoext` (calls it from inside)
     pub fn file_stem(path: &str) -> String {
         PathString::basenoext(path)
     }
